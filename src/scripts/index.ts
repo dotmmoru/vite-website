@@ -16,8 +16,11 @@ import { bootstrapCameraKit } from '@snap/camera-kit';
     liveRenderTarget.height = window.innerHeight;
   }
 
-  window.addEventListener('load', resizeCanvas);
-  window.addEventListener('resize', resizeCanvas);
+  window.addEventListener('load', () => {
+    resizeCanvas();
+    // This line ensures the canvas remains full screen even when the window is resized
+    window.addEventListener('resize', resizeCanvas);
+  });
 
   const mediaStream = await navigator.mediaDevices.getUserMedia({
     video: true,
