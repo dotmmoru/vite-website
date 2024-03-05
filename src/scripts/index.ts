@@ -2,7 +2,7 @@ import { bootstrapCameraKit } from '@snap/camera-kit';
 
 (async function () {
   const cameraKit = await bootstrapCameraKit({
-    apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzA5NTU4Mjg5LCJzdWIiOiI3NTNkODhjZS0zMDMzLTRmZDEtYmEyNC02NWVhMjIyNTVlYTB-U1RBR0lOR35jN2QwMzRkZi1jMDdiLTRhNDYtODg0Zi05YjYzOTAwYzQxMjcifQ.Y-bEhFEX8hMZfaGQOqTdmVJhRaUzAJGVOcFflk-y-ck',
+    apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzA5NTU4Mjg5LCJzdWIiOiI3NTNkODhjZS0zMDMzLTRmZDEtYmEyNC02NWVhMjIyNTVlYTB - U1RBR0lOR35jN2QwMzRkZi1jMDdiLTRhNDYtODg0Zi05YjYzOTAwYzQxMjcifQ.Y - bEhFEX8hMZfaGQOqTdmVJhRaUzAJGVOcFflk - y - ck',
   });
 
   const liveRenderTarget = document.getElementById(
@@ -14,7 +14,7 @@ import { bootstrapCameraKit } from '@snap/camera-kit';
   const resizeCanvas = () => {
     const aspectRatio = window.innerWidth / window.innerHeight;
 
-    // Вычисляем ширину канваса, сохраняя пропорции изображения
+    // Вычисляем ширину и высоту канваса, сохраняя пропорции изображения
     let canvasWidth = window.innerWidth;
     let canvasHeight = window.innerWidth / aspectRatio;
 
@@ -24,8 +24,8 @@ import { bootstrapCameraKit } from '@snap/camera-kit';
       canvasWidth = window.innerHeight * aspectRatio;
     }
 
-    liveRenderTarget.width = canvasWidth;
-    liveRenderTarget.height = canvasHeight;
+    liveRenderTarget.style.width = `${canvasWidth}px`;
+    liveRenderTarget.style.height = `${canvasHeight}px`;
   };
 
   window.addEventListener('load', () => {
