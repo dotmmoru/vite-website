@@ -11,14 +11,25 @@ import { bootstrapCameraKit } from '@snap/camera-kit';
 
   const session = await cameraKit.createSession({ liveRenderTarget });
 
-  function resizeCanvas() {
-    liveRenderTarget.width = window.innerWidth;
-    liveRenderTarget.height = window.innerHeight;
-  }
+  const resizeCanvas = () => {
+    const aspectRatio = window.innerWidth / window.innerHeight;
+
+    // Вычисляем ширину канваса, сохраняя пропорции изображения
+    let canvasWidth = window.innerWidth;
+    let canvasHeight = window.innerWidth / aspectRatio;
+
+    // Если высота канваса превышает высоту окна, устанавливаем ее равной высоте окна
+    if (canvasHeight > window.innerHeight) {
+      canvasHeight = window.innerHeight;
+      canvasWidth = window.innerHeight * aspectRatio;
+    }
+
+    liveRenderTarget.width = canvasWidth;
+    liveRenderTarget.height = canvasHeight;
+  };
 
   window.addEventListener('load', () => {
     resizeCanvas();
-    // This line ensures the canvas remains full screen even when the window is resized
     window.addEventListener('resize', resizeCanvas);
   });
 
