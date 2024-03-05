@@ -2,7 +2,7 @@ import { bootstrapCameraKit } from '@snap/camera-kit';
 
 (async function () {
   const cameraKit = await bootstrapCameraKit({
-    apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzA5NTU4Mjg5LCJzdWIiOiI3NTNkODhjZS0zMDMzLTRmZDEtYmEyNC02NWVhMjIyNTVlYTB - U1RBR0lOR35jN2QwMzRkZi1jMDdiLTRhNDYtODg0Zi05YjYzOTAwYzQxMjcifQ.Y - bEhFEX8hMZfaGQOqTdmVJhRaUzAJGVOcFflk - y - ck',
+    apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzA5NTU4Mjg5LCJzdWIiOiI3NTNkODhjZS0zMDMzLTRmZDEtYmEyNC02NWVhMjIyNTVlYTB-U1RBR0lOR35jN2QwMzRkZi1jMDdiLTRhNDYtODg0Zi05YjYzOTAwYzQxMjcifQ.Y-bEhFEX8hMZfaGQOqTdmVJhRaUzAJGVOcFflk-y-ck',
   });
 
   const liveRenderTarget = document.getElementById(
